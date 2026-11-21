@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import TornDivider from '../components/TornDivider';
 
 export default function About() {
   return (
@@ -14,10 +13,9 @@ export default function About() {
             src="/images/hero_video_call.jpg"
             alt="Elderly couple in Aligarh on a family video call"
             className="w-full h-full object-cover opacity-20 filter contrast-125"
-            onError={(e) => {
-              e.currentTarget.src =
-                'https://lh3.googleusercontent.com/aida/ALJJyrD0uck9I3EfVJSYbW8ziD-gekYrWGngmYpzy5fnmGwbrCI00ub05-ZX7ZcVOhCh-xebzY19BtHXqhrHvTKab8zFwNCROjLcMXzy9ewzaieMG6Y3GYPXWnTw4Qon-z6JVFpfMEDwlyXkgzr_7_x-PY2nos6Yr2EsTMkGU0nSmy33NkzEYkbaj6eJvcI-q78xMqNNyIYno1QBg-ARDUhAH_Cm7R2zcUUClRmLXuLc5_5RITaUsz6Dv1FSiXieUbodC7suGQ';
-            }}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-deep-plum/90 via-deep-plum/75 to-deep-plum/95" />
         </div>
@@ -38,8 +36,6 @@ export default function About() {
             </p>
           </div>
         </div>
-
-        <TornDivider direction="down" fillColor="fill-cream" className="absolute bottom-0 left-0" />
       </section>
 
       {/* Main Content */}
@@ -66,15 +62,13 @@ export default function About() {
               </p>
             </div>
             <div className="lg:col-span-6">
-              <div className="rounded-3xl overflow-hidden border border-outline-variant shadow-md aspect-square max-w-md mx-auto">
+              <div className="rounded-3xl overflow-hidden border border-outline-variant shadow-md aspect-square max-w-md mx-auto bg-surface-container-low">
                 <img
                   src="/images/caregiver_home_visit.jpg"
                   alt="Caregiver visiting elderly couple at home in Aligarh"
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src =
-                      'https://lh3.googleusercontent.com/aida/ALJJyrCVKbpxd1SkSWjmDZdcNgsEe-TFlM5QiG11Z1Jl0ZAp66P4aWNDR3FQMbQNBBSlIy3Up8VVmkZQ6AP74iBuHYPktDZ1GF2F13r_LgMbfDHoYRQrgTqDG9wOA_vo-vy4FqlyRIGR_kkEQr01SNYA_7JDISAGTvurUBZ96QS3XNfMd-fXQrZS5yrcatskJV5ksJBbCsZC0PyHKi-JRJDtPZsnxE4RrEurgpB6u4MYXMhlc0MtKHm58EGMOiFQNw';
-                  }}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

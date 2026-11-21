@@ -1,14 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import TornDivider from './TornDivider';
 
 export default function Footer({ hideCtaBanner = false }) {
   return (
-    <footer className="bg-deep-plum text-white mt-12 relative">
-      {/* Torn Top Divider */}
-      <TornDivider direction="up" fillColor="fill-cream" />
-
-      <div className="max-w-6xl mx-auto px-gutter-lg pt-12 pb-16 flex flex-col gap-12">
+    <footer className="bg-deep-plum text-white mt-16 relative">
+      <div className="max-w-6xl mx-auto px-gutter-lg pt-16 pb-16 flex flex-col gap-12">
         {/* Pre-footer Call to Action (When not hidden) */}
         {!hideCtaBanner && (
           <div className="rounded-2xl bg-gradient-to-br from-primary-container/80 to-deep-plum border border-white/10 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 text-white shadow-xl">

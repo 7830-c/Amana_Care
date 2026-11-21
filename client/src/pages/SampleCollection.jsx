@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import TornDivider from '../components/TornDivider';
 
 export default function SampleCollection() {
   const whatsappUrl =
@@ -15,6 +14,8 @@ export default function SampleCollection() {
           <img
             src="/images/hero_video_call.jpg"
             alt="Elderly couple at home in Aligarh"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover opacity-20 filter contrast-125"
             onError={(e) => {
               e.currentTarget.src =
@@ -40,8 +41,6 @@ export default function SampleCollection() {
             </p>
           </div>
         </div>
-
-        <TornDivider direction="down" fillColor="fill-cream" className="absolute bottom-0 left-0" />
       </section>
 
       {/* Main Content */}

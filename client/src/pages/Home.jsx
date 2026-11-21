@@ -2,30 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import TornDivider from '../components/TornDivider';
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-surface text-on-surface font-body antialiased selection:bg-blush-pink selection:text-deep-plum">
       {/* 1. HERO SECTION */}
-      <section className="relative bg-deep-plum text-white overflow-hidden min-h-[620px] md:min-h-[720px] flex flex-col justify-between">
-        {/* Background photo with subtle dark plum overlay */}
+      <section className="relative bg-deep-plum text-white overflow-hidden min-h-[600px] md:min-h-[680px] flex flex-col justify-between pb-12">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/hero_video_call.jpg"
             alt="Elderly couple on video call with far-away family"
             className="w-full h-full object-cover opacity-20 filter contrast-125"
-            onError={(e) => {
-              // Fallback to Google usercontent URL if local image is unavailable
-              e.currentTarget.src =
-                'https://lh3.googleusercontent.com/aida/ALJJyrD0uck9I3EfVJSYbW8ziD-gekYrWGngmYpzy5fnmGwbrCI00ub05-ZX7ZcVOhCh-xebzY19BtHXqhrHvTKab8zFwNCROjLcMXzy9ewzaieMG6Y3GYPXWnTw4Qon-z6JVFpfMEDwlyXkgzr_7_x-PY2nos6Yr2EsTMkGU0nSmy33NkzEYkbaj6eJvcI-q78xMqNNyIYno1QBg-ARDUhAH_Cm7R2zcUUClRmLXuLc5_5RITaUsz6Dv1FSiXieUbodC7suGQ';
-            }}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-deep-plum/90 via-deep-plum/70 to-deep-plum/95" />
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-6xl mx-auto px-gutter-lg pt-6 md:pt-8 w-full flex-1 flex flex-col justify-between pb-16">
+        <div className="relative z-10 max-w-6xl mx-auto px-gutter-lg pt-6 md:pt-8 w-full flex-1 flex flex-col justify-between">
           <Navbar />
 
           <div className="max-w-3xl my-auto py-8">
@@ -62,9 +58,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* Torn Paper Bottom Edge */}
-        <TornDivider direction="down" fillColor="fill-cream" />
       </section>
 
       {/* 2. THE DISTANCE IS REAL */}
@@ -76,10 +69,8 @@ export default function Home() {
                 src="/images/concern_woman.jpg"
                 alt="Elderly mother holding phone with concern"
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80';
-                }}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -184,10 +175,8 @@ export default function Home() {
                 src="/images/family_bridge.jpg"
                 alt="Grandparents with grandchildren looking at album"
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80';
-                }}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -455,10 +444,8 @@ export default function Home() {
       </section>
 
       {/* 6. DARK STATS BANNER */}
-      <section className="relative bg-deep-plum text-white overflow-hidden py-14 my-10">
-        <TornDivider direction="up" fillColor="fill-cream" className="absolute top-0 left-0" />
-
-        <div className="max-w-6xl mx-auto px-gutter-lg py-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <section className="bg-deep-plum text-white overflow-hidden py-16 my-10">
+        <div className="max-w-6xl mx-auto px-gutter-lg grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 flex flex-col gap-6">
             <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
               Helping your parents stay safe, seen and <span className="italic font-normal">cared for</span>.
@@ -485,21 +472,17 @@ export default function Home() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="rounded-3xl overflow-hidden border border-white/20 shadow-xl max-w-md mx-auto aspect-[4/3]">
+            <div className="rounded-3xl overflow-hidden border border-white/20 shadow-xl max-w-md mx-auto aspect-[4/3] bg-surface-container-high/20">
               <img
                 src="/images/caregiver_kitchen.jpg"
                 alt="Caregiver assisting elderly lady in kitchen"
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80';
-                }}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
         </div>
-
-        <TornDivider direction="down" fillColor="fill-cream" className="absolute bottom-0 left-0" />
       </section>
 
       {/* 7. HOME SAMPLE COLLECTION BANNER */}
@@ -511,10 +494,8 @@ export default function Home() {
                 src="/images/stethoscope_visit.jpg"
                 alt="Caregiver doing wellness check with stethoscope"
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80';
-                }}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
