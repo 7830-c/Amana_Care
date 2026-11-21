@@ -8,16 +8,9 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-surface text-on-surface font-body antialiased selection:bg-blush-pink selection:text-deep-plum">
       {/* 1. HERO SECTION */}
       <section className="relative bg-deep-plum text-white overflow-hidden min-h-[600px] md:min-h-[680px] flex flex-col justify-between pb-12">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/hero_video_call.jpg"
-            alt="Elderly couple on video call with far-away family"
-            className="w-full h-full object-cover opacity-20 filter contrast-125"
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-deep-plum/90 via-deep-plum/70 to-deep-plum/95" />
+        <div className="absolute inset-0 z-0 bg-deep-plum">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#381E32] via-[#2A1125] to-[#1E0919] opacity-95" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(247,197,163,0.12),rgba(255,255,255,0))]" />
         </div>
 
         {/* Content Container */}

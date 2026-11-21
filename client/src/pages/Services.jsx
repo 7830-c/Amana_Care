@@ -8,16 +8,9 @@ export default function Services() {
     <div className="min-h-screen flex flex-col bg-surface text-on-surface font-body antialiased selection:bg-blush-pink selection:text-deep-plum">
       {/* Header & Subpage Hero */}
       <section className="relative bg-deep-plum text-white overflow-hidden pb-16">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/hero_video_call.jpg"
-            alt="Elderly couple at home in Aligarh"
-            className="w-full h-full object-cover opacity-20 filter contrast-125"
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-deep-plum/90 via-deep-plum/75 to-deep-plum/95" />
+        <div className="absolute inset-0 z-0 bg-deep-plum">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#381E32] via-[#2A1125] to-[#1E0919] opacity-95" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(247,197,163,0.12),rgba(255,255,255,0))]" />
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-gutter-lg pt-6 md:pt-8">
