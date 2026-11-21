@@ -22,6 +22,12 @@ app.get('*', (req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`[AmanaCare Server] Running on http://localhost:${PORT}`);
-});
+// When running on Vercel Services, Vercel manages the HTTP server lifecycle.
+// For local development or standalone server execution, listen on PORT.
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`[AmanaCare Server] Running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
